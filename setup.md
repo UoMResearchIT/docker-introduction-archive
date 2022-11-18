@@ -63,20 +63,8 @@ If you are unable to follow the above instructions to install Docker Desktop on 
 </article>
 <article role="tabpanel" class="tab-pane" id="macos">
 
-#### Apple macOS
 
-Ideally, you will be able to install the Docker Desktop software, following the
-[Docker website's documentation](https://docs.docker.com/docker-for-mac/install/).
-The current version of the Docker Desktop software requires macOS version 10.14 (Mojave) or later.
-
-If you already use Homebrew or MacPorts to manage your software, and would prefer to use those
-tools rather than Docker's installer, you can do so. For Homebrew, you can run the command
-`brew install --cask docker`. Note that you still need to run the Docker graphical user interface
-once to complete the initial setup, after which time the command line functionality of Docker will
-become available. The Homebrew install of Docker also requires a minimum macOS version of 10.14.
-The MacPorts Docker port should support older, as well as the most recent, operating system
-versions (see the [port details](https://ports.macports.org/port/docker/details/)), but note that
-we have not recently tested the Docker installation process via MacPorts.
+Please install docker following these [instructions](https://docs.docker.com/desktop/install/mac-install/).
 
 </article>
 
