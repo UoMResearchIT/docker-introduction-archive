@@ -140,7 +140,7 @@ Once the Docker Engine has been successfully installed, some [post-installation 
 
 ### Verify Installation
 
-To quickly check if the Docker and client and server are working run the following command in a new terminal or ssh session:
+To check if the Docker and client and server are working run the following command in a new terminal session:
 ~~~
 $ docker version
 ~~~
@@ -177,7 +177,9 @@ Server:
 ~~~
 {: .output}
 
-The above output shows a successful installation and will vary based on your system.  The important part is that the "Client" and the "Server" parts are both working and returns information.  It is beyond the scope of this document to debug installation problems but common errors include the user not belonging to the `docker` group and forgetting to start a new terminal or ssh session.
+If you see output similar to the above, you have a successful installation. It is important that both the "Client" and the "Server" sections return information. It is beyond the scope of this document to debug installation problems but some general advice would be to:
+  * double check the installation instructions for your platform
+  * ensure you have started a new terminal session (or rebooted your machine)
 
 ### A quick tutorial on copy/pasting file contents from episodes of the lesson
 Let's say you want to copy text off the lesson website and paste it into a file named `myfile` in the current working directory of a shell window. This can be achieved in many ways, depending on your computer's operating system, but routes I have found work for me:
