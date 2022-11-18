@@ -79,17 +79,39 @@ versions (see the [port details](https://ports.macports.org/port/docker/details/
 we have not recently tested the Docker installation process via MacPorts.
 
 </article>
+
 <article role="tabpanel" class="tab-pane" id="linux">
 
-#### Linux
+### Installation ###
 
-There are too many varieties of Linux to give precise instructions here, but hopefully you can locate documentation for getting Docker installed on your Linux distribution. It may already be installed. If it is not already installed on your system, the [Install Docker Engine](https://docs.docker.com/engine/install/) page provides an overview of supported Linux distributions and pointers to relevant installation information. Alternatively, see:
+[Install Docker Engine](https://docs.docker.com/engine/install/) provides an overview of supported Linux distributions and pointers to relevant installation information. 
 
- - [Docker Engine on CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
+Alternatively, see below for advice on specific, common, distributions:
+
+ - [Docker Engine on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
  - [Docker Engine on Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
  - [Docker Engine on Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
- - [Docker Engine on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+ - [Docker Engine on CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
  
+Further, a generic installation option is provided using a [convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script).
+
+### Enable non-root access ###
+
+To use Docker as a non-root user, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) must be taken.
+
+> ## Extra action if you install Docker using Snap
+> [Snap](https://snapcraft.io/) is an app management system for linux - which is popular on
+> Ubuntu and other systems. Docker is available via Snap - if you have installed it using
+> this service you will need to take the following steps, to ensure docker will work properly.
+> ~~~
+> mkdir ~/tmp
+> export TMPDIR=~/tmp
+> ~~~
+> {: .language-bash}
+> Each time you open a new terminal you will have to enter the `export TMPDIR=~/tmp` command,
+> or you can add it to your `~/.profile` or `~/.bashrc` file.
+{: .callout}
+
 </article>
 </div>
 </div>
