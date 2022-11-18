@@ -19,6 +19,20 @@ In most cases, you will need to have administrator rights on the computer in ord
 
 Please try to install the appropriate software from the list below depending on the operating system that your computer is running. Do let the workshop organisers know as early as possible if you are unable to install Docker using these instructions, as there may be other options available.
 
+{::options parse_block_html="true" /}
+<div>
+<ul class="nav nav-tabs nav-justified" role="tablist">
+<li role="presentation" class="active"><a data-os="windows" href="#windows" aria-controls="Windows"
+role="tab" data-toggle="tab">Windows</a></li>
+<li role="presentation"><a data-os="macos" href="#macos" aria-controls="macOS" role="tab"
+data-toggle="tab">macOS</a></li>
+<li role="presentation"><a data-os="linux" href="#linux" aria-controls="Linux" role="tab"
+data-toggle="tab">Linux</a></li>
+</ul>
+
+<div class="tab-content">
+<article role="tabpanel" class="tab-pane active" id="windows">
+
 #### Microsoft Windows
 
 **You must have admin rights to run Docker!** Some parts of the lesson will work without running as admin but if you are unable to `Run as administrator` on your machine some elements of this workshop might not work as described.
@@ -46,6 +60,8 @@ If you are unable to follow the above instructions to install Docker Desktop on 
 > ```
 > This should suppress the path translation functionality in Git Bash.
 {: .callout}
+</article>
+<article role="tabpanel" class="tab-pane" id="macos">
 
 #### Apple macOS
 
@@ -62,6 +78,9 @@ The MacPorts Docker port should support older, as well as the most recent, opera
 versions (see the [port details](https://ports.macports.org/port/docker/details/)), but note that
 we have not recently tested the Docker installation process via MacPorts.
 
+</article>
+<article role="tabpanel" class="tab-pane" id="linux">
+
 #### Linux
 
 There are too many varieties of Linux to give precise instructions here, but hopefully you can locate documentation for getting Docker installed on your Linux distribution. It may already be installed. If it is not already installed on your system, the [Install Docker Engine](https://docs.docker.com/engine/install/) page provides an overview of supported Linux distributions and pointers to relevant installation information. Alternatively, see:
@@ -70,6 +89,10 @@ There are too many varieties of Linux to give precise instructions here, but hop
  - [Docker Engine on Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
  - [Docker Engine on Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
  - [Docker Engine on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+ 
+</article>
+</div>
+</div>
 
 ### Verify Installation
 
