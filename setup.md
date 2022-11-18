@@ -1,6 +1,17 @@
 ---
 title: Setup
 ---
+### Requirements
+  * A Linux, Mac or Windows computer
+  * More than 5 GB free hard drive space
+  * If installing Docker yourself: **root / administrator access**
+
+> ## Warning
+> Docker uses root / administrator access for basic functionality. If installing Docker yourself, without root / administrator rights, it will not be possible to follow or complete this course. 
+>
+> If your computer has already been set up with Docker, then it may be possible to follow this course, please check locally.
+{: .callout}
+
 ### Website accounts to create
 Please seek help at the start of the lesson if you have not been able to establish a website account on:
 - The [Docker Hub](http://hub.docker.com). We will use the Docker Hub to download pre-built container images, and for you to upload and download container images that you create, as explained in the relevant lesson episodes.
