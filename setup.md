@@ -180,31 +180,3 @@ Server:
 If you see output similar to the above, you have a successful installation. It is important that both the "Client" and the "Server" sections return information. It is beyond the scope of this document to debug installation problems but some general advice would be to:
   * double check the installation instructions for your platform
   * ensure you have started a new terminal session (or rebooted your machine)
-
-### A quick tutorial on copy/pasting file contents from episodes of the lesson
-Let's say you want to copy text off the lesson website and paste it into a file named `myfile` in the current working directory of a shell window. This can be achieved in many ways, depending on your computer's operating system, but routes I have found work for me:
-- macOS and Linux: you are likely to have the `nano` editor installed, which provides you with a very straightforward way to create such a file, just run `nano myfile`, then paste text into the shell window, and press <kbd>control</kbd>+<kbd>x</kbd> to exit: you will be prompted whether you want to save changes to the file, and you can type <kbd>y</kbd> to say "yes".
-- Microsoft Windows running `cmd.exe` shells:
-  - `del myfile` to remove `myfile` if it already existed;
-  - `copy con myfile` to mean what's typed in your shell window is copied into `myfile`;
-  - paste the text you want within `myfile` into the shell window;
-  - type <kbd>control</kbd>+<kbd>z</kbd> and then press <kbd>enter</kbd> to finish copying content into `myfile` and return to your shell;
-  - you can run the command `type myfile` to check the content of that file, as a double-check.
-- Microsoft Windows running PowerShell:
-  - The `cmd.exe` method probably works, but another is to paste your file contents into a so-called "here-string" between `@'` and `'@` as in this example that follows (the ">" is the prompt indicator):
-
-        > @'
-        Some hypothetical
-        file content that is
-
-        split over many
-
-        lines.
-        '@ | Set-Content myfile -encoding ascii
-
-{% include links.md %}
-
-{% comment %}
-<!--  LocalWords:  myfile kbd links.md md endcomment
--->
-{% endcomment %}
