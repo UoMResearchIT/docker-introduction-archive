@@ -40,15 +40,43 @@ data-toggle="tab">Linux</a></li>
 <div class="tab-content">
 <article role="tabpanel" class="tab-pane active" id="windows">
 
-#### Microsoft Windows
+Installation of Docker on Microsoft Windows comprises two central steps:
+  * Enabling the Windows Subsystem for Linux
+  * Installation of the Docker Desktop package
 
-**You must have admin rights to run Docker!** Some parts of the lesson will work without running as admin but if you are unable to `Run as administrator` on your machine some elements of this workshop might not work as described.
+Microsoft publish a [guide](https://learn.microsoft.com/en-us/windows/wsl/install "WSL install") to installing WSL and Docker provide a [guide](https://docs.docker.com/desktop/install/windows-install/ "Docker Desktop Install ") for installing Docker Desktop.
 
-Ideally, you will be able to install the Docker Desktop software, following the [Docker website's documentation](https://docs.docker.com/docker-for-windows/install/). Note that the instructions for installing Docker Desktop on Windows 10 Home Edition are different from other versions of Windows 10.
+Further, we provide some instruction here that attempts to unify these two guides. 
 
-Note that the above installation instructions highlight a minimum version or "build" that is required to be able to install Docker on your Windows 10 system. See [Which version of Windows operating system am I running?](https://support.microsoft.com/en-us/windows/which-version-of-windows-operating-system-am-i-running-628bec99-476a-2c13-5296-9dd081cdd808) for details of how to find out which version/build of Windows 10 you have.
+1. Confirm that you are running Windows 10, version 2004 or higher (Build 19041 and higher) or Windows 11.
 
-If you are unable to follow the above instructions to install Docker Desktop on your Windows system, the final release of the deprecated Docker Toolbox version of Docker for Windows can be downloaded from the [releases page of the Docker Toolbox GitHub repository](https://github.com/docker/toolbox/releases). (Download the `.exe` file for the Windows installer). _Please note that this final release of Docker Toolbox includes an old version of Docker and you are strongly advised not to attempt to use this for any production use. It will, however, enable you to follow along with the lesson material._
+> ## Check your Windows version
+> To check your Windows version and build number, press the Windows logo key + <kbd>R</kbd>, type `winver`, select OK.
+You can update to the latest Windows version by selecting "Start" > "Settings" > "Windows Update" > "Check for updates".
+{: .callout }
+
+2. Open PowerShell as Administrator ("Start menu" > "PowerShell" > right-click > "Run as Administrator")
+and paste the following commands followed by <kbd>Enter</kbd> to install WSL 2:
+`wsl --update`
+`wsl --install --distribution Ubuntu`
+To ensure that `Ubuntu` is the default subsystem instead of `docker-desktop-*`, you may need to use:
+`wsl --set-default Ubuntu`
+If you had previously installed WSL1 in Windows 10, upgrade to WSL2 with:
+`wsl --set-version Ubuntu 2`
+
+3. Reboot your computer. Ubuntu will set itself up after the reboot. Wait for Ubuntu to ask for a
+UNIX username and password. After you provide that information and the command prompt appears,
+then the Ubuntu window can be closed.
+
+4. Then continue to [download Docker Desktop](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe){:target="_blank"}{:rel="noopener noreferrer"} and run the installer.
+   1. Reboot after installing Docker Desktop.
+   2. Run Docker Desktop
+   3. Accept the terms and conditions, if prompted
+   4. Wait for Docker Desktop to finish starting
+   5. Skip the tutorial, if prompted
+   6. From the top menu choose "Settings" > "Resources" > "WSL Integration"
+   7. Under "Enable integration with additional distros" select "Ubuntu"
+   8. Close the Docker Desktop window
 
 > ## Warning: Git Bash
 > If you are using Git Bash as your terminal on Windows then you should be aware that you may run
@@ -67,6 +95,7 @@ If you are unable to follow the above instructions to install Docker Desktop on 
 > ```
 > This should suppress the path translation functionality in Git Bash.
 {: .callout}
+
 </article>
 <article role="tabpanel" class="tab-pane" id="macos">
 
