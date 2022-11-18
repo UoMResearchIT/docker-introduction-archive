@@ -106,14 +106,15 @@ Please install docker following these [instructions](https://docs.docker.com/des
 
 <article role="tabpanel" class="tab-pane" id="linux">
 
-### Installation ###
+Installation on Linux requires two steps:
+  * Installation of Docker Engine
+  * Enabling non-root access
 
-[Install Docker Engine](https://docs.docker.com/engine/install/) provides an overview of supported Linux distributions and pointers to relevant installation information. 
+Docker provide a guide to [installing the Docker Engine](https://docs.docker.com/engine/install/) which provides an overview of supported Linux distributions and pointers to relevant installation information. 
 
 Additionally, a generic installation option is provided using a [convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script).
-### Enable non-root access ###
 
-To use Docker as a non-root user, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) must be taken.
+Once the Docker Engine has been successfully installed, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) must be taken.
 
 
 > ## Warning: Extra action if you install Docker using Snap
