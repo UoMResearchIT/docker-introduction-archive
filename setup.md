@@ -95,6 +95,8 @@ then the Ubuntu window can be closed.
 > ```
 > This should suppress the path translation functionality in Git Bash.
 {: .callout}
+</article>
+<article role="tabpanel" class="tab-pane" id="macos">
 
 </article>
 <article role="tabpanel" class="tab-pane" id="macos">
@@ -115,7 +117,6 @@ Docker provide a guide to [installing the Docker Engine](https://docs.docker.com
 Additionally, a generic installation option is provided using a [convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script).
 
 Once the Docker Engine has been successfully installed, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) must be taken.
-
 
 > ## Warning: Extra action if you install Docker using Snap
 > [Snap](https://snapcraft.io/) is an app management system for linux - which is popular on
