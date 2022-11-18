@@ -23,12 +23,8 @@ Download the [`docker-intro.zip`]({{ page.root }}/files/docker-intro.zip) file. 
 Move the downloaded file to your Desktop and unzip it. It should unzip to a folder called `docker-intro`. 
 
 ### Software to install
-Docker's installation experience has steadily improved, however situations will arise in which installing Docker on your computer may not be straightforward unless you have a large amount of technical experience.
-Workshops try to have helpers on hand that have worked their way through the install process, but do be prepared for some troubleshooting.
 
-In most cases, you will need to have administrator rights on the computer in order to install the Docker software. If you are using a computer managed by your organisation and do not have administrator rights, you *may* be able to get your organisation's IT staff to install Docker for you. Alternatively your IT support staff *may* be able to give you remote access to a server that can run Docker commands.
-
-Please try to install the appropriate software from the list below depending on the operating system that your computer is running. Do let the workshop organisers know as early as possible if you are unable to install Docker using these instructions, as there may be other options available.
+Installing Docker on different platforms requires different procedures and generally requires root / administrator access for a successful installation. Please follow the pointers below for assistance in finding the correct installation procedures.
 
 {::options parse_block_html="true" /}
 <div>
