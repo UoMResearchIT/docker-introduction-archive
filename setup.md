@@ -74,20 +74,13 @@ Please install docker following these [instructions](https://docs.docker.com/des
 
 [Install Docker Engine](https://docs.docker.com/engine/install/) provides an overview of supported Linux distributions and pointers to relevant installation information. 
 
-Alternatively, see below for advice on specific, common, distributions:
-
- - [Docker Engine on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
- - [Docker Engine on Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
- - [Docker Engine on Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
- - [Docker Engine on CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
- 
-Further, a generic installation option is provided using a [convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script).
-
+Additionally, a generic installation option is provided using a [convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script).
 ### Enable non-root access ###
 
 To use Docker as a non-root user, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) must be taken.
 
-> ## Extra action if you install Docker using Snap
+
+> ## Warning: Extra action if you install Docker using Snap
 > [Snap](https://snapcraft.io/) is an app management system for linux - which is popular on
 > Ubuntu and other systems. Docker is available via Snap - if you have installed it using
 > this service you will need to take the following steps, to ensure docker will work properly.
@@ -96,8 +89,12 @@ To use Docker as a non-root user, some [post-installation steps](https://docs.do
 > export TMPDIR=~/tmp
 > ~~~
 > {: .language-bash}
-> Each time you open a new terminal you will have to enter the `export TMPDIR=~/tmp` command,
-> or you can add it to your `~/.profile` or `~/.bashrc` file.
+> These commands will let you use docker in the current terminal instance, but you will have to run "export TEMPDIR=~/tmp" in every new terminal you want to use docker in.
+> An alternative is to append that command at the end of your bashrc file with
+> ~~~
+> echo "export TEMPDIR=~/tmp" >> ~/bashrc
+> ~~~
+> this will configure each new instance of a terminal to run that command at the start of every new terminal instance.
 {: .callout}
 
 </article>
