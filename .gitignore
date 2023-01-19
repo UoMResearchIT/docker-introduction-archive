@@ -4,7 +4,8 @@
 .ipynb_checkpoints
 .sass-cache
 __pycache__
-_site
+_site/*
+!_site/.gitkeep
 .Rproj.user
 .Rhistory
 .RData
