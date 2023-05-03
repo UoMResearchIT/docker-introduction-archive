@@ -23,14 +23,14 @@ keypoints:
 - "However, it is very limited in most cases (even for *consumers*), and rarely allows the user to configure and interact with the containers adequately."
 ---
 
-**This episode is meant to be instructional, that is, you do not *need* to follow along.**
+**This episode is meant to be demonstrative, that is, you do not *need* to follow along.**
 
 We will present the Docker Desktop dashboard, as it will be useful to understand key concepts of docker, such as images and containers.
-However, it is important to note that while it is mostly is free, some features are offered as premium.
+However, it is important to note that while it is mostly is free, some features are offered at a premium.
 Also, it is not fully functional on all operating systems; it can produce conflicts with the docker engine on Linux, for example.
 
 ## Getting images
-Setting up docker in windows or mac will have installed Docker Desktop by default.
+Setting up docker in Windows or Mac will have installed Docker Desktop by default.
 If you open the application you will likely see something like this:
 ![Docker Desktop being opened for the first time.](../fig/docker-desktop/00_lo.gif)
 You'll notice that the panel on the left has a tab for 'Images' and another for 'Containers'.
@@ -43,7 +43,7 @@ and allows us to search for the images we saw in the previous episode directly f
 Make sure that you select the right tab when you search!
 ![Search window.](../fig/docker-desktop/01_search.png)
 
-You can search through the name only,
+In Docker Desktop you can either search by name only,
 ![Search by name.](../fig/docker-desktop/02_search_name.png)
 
 or include the owner. You can then select the tag from the dropdown menu.
@@ -62,7 +62,7 @@ Clicking on the image will open a window with information on how the image is bu
 ![Inspecting image hello-world.](../fig/docker-desktop/05_image_inspection.png)
 
 The `hello-world` image does not seem too interesting from here.
-If you go to DockerHub you'll find links to the github site, where you'll see it is not as simpleas it looks.
+If you go to DockerHub you'll find links to the Github site, where you'll see that the image is not as simple as it looks.
 Nevertheless, this is a very nice and quick way to explore an image.
 
 If we now inspect the `docker/getting-started` image, for example, we can see that it detects some vulnerabilities:
@@ -72,10 +72,11 @@ You can even further inspect the vulnerable layers by looking at the command
 
 This all looks rather scary, and it is important that we are careful with the images that we download.
 It is therefore quite useful to be able to analize them like this.
-This image, in particular, is from a verified publisher (Docker Inc. no less!), and has been downloaded over 10M times, so we'll be safe.
+This image, in particular, is from a verified publisher (Docker Inc. no less!), and has been downloaded over 10M times,
+so the container is likely not maliicous.
 
 ## Running containers
-The images that we just downloaded are inmutable files, they are snapshots of an environment, distributed to be used as *templates* to create 'containers'.
+The images that we just downloaded are immutable files, they are snapshots of an environment, distributed to be used as *templates* to create 'containers'.
 The containers are, essentially, images being *run*.
 They are executions of the image, and because they are running, they are no longer 'static'.
 
@@ -85,7 +86,7 @@ Let's run the `hello-world` image by either clicking the 'Run' button in the 'Ac
 A prompt will ask you to confirm 'Run' or modify some optional settings.
 ![Run confirmation prompt.](../fig/docker-desktop/09_image_run_prompt.png)
 
-The optional settings allow you to modify the container name, so that you can easily identify it afterwards.
+The optional settings allow you to modify the container's name, so that you can easily identify it afterwards.
 Lets add an appropriate name and confirm with the 'Run' button.
 ![Run optional settings.](../fig/docker-desktop/10_optional_settings.png)
 
@@ -143,7 +144,7 @@ This will exit the container inspection and show us all the containers.
 Both containers in the list have a status 'Exited'.
 ![Containers list.](../fig/docker-desktop/17_containers.png)
 
-Some of you may be wondering why if we have only run the `hello-world` image, you can see there are two containers.
+You may be wondering why if we have only run the `hello-world` image, you can see there are two containers.
 One of the containers we named, and the other has some gibberish as a name (Docker generated this randomly).
 As mentioned before, the *image* is used as a template, and as many *containers* as we want can be created from it.
 If we go back to the 'Images' tab and run `hello world` again, we'll see a new container appear.
@@ -154,7 +155,7 @@ Not all containers are as short lived as the one we've been using.
 If we run the `docker/getting-started` image that we had pulled earlier, we will see something different happen.
 You can immediately notice the status under the container name is 'RUNNING' now.
 The 'Logs' tab is not too informative, but the 'Inspect' tab already shows more information.
-A process called 'NginX' is running.
+A process called 'nginx' is running.
 The 'Terminal' and 'Stats' tabs changed the most.
 Since the container is still running, the stats get shown, and we are able to launch a terminal *inside* the container.
 
@@ -194,14 +195,14 @@ You'll see the green icon of the container indicating that it is still live, and
 
 Clicking on the container name again will take us back to the 'Logs' tab in the container.
 Lets try and interact with the terminal inside the container.
-If you print the working directory with `pwd` you'll get the base directory: `\`.
+If you print the working directory with `pwd` you'll get the base directory: `/`.
 You can also list the contents with `ls`, and the `docker-entrypoint` files are a dead giveaway that we are inside the container.
 At this point this container is very much like a VM.
 We can modify things, like for example making a directory with `mkdir`, and see it has been created with `ls` again.
 ![Terminal, mkdir and ls inside getting-started container.](../fig/docker-desktop/23_gettingstarted_mkdir.png)
 
 But we can do more than that, we can install things. For example, you'll notice that `htop` is not installed.
-Since the `getting-started` image is based on alpine, we can install it using `apk add htop`, and we can now use it.
+Since the `getting-started` image is based on Alpine, we can install it using `apk add htop`, and we can now use it.
 
 {::options parse_block_html="true" /}
 <div>
@@ -257,7 +258,6 @@ Now lets go to the 'Terminal' tab, and try and find our directory with `ls`. The
 We'd also installed `htop`. so lets have a go at running it. Not there either.
 ![Terminal in fresh getting-started image.](../fig/docker-desktop/29_gettingstarted_2.png)
 
-If this is not surprising to you, it means you're getting the hang of it.
 When we re-ran the *image*, we created a **new** *container*.
 The new container is created from the template saved in the image, and so 'our' changes have banished.
 This becomes very clear when we go back to the 'Containers' tab on the left.
@@ -267,21 +267,19 @@ the new container (which is still running, by the way).
 
 ## Reviving containers
 We *can* get the old container running again, although this is rarely something we'd *want* to do.
-In docker desktop, all we need to do is click on the 'Start' button from the 'Containers' list.
+In Docker Desktop, all we need to do is click on the 'Start' button from the 'Containers' list.
 The terminal will appear empty, because it is a new session, but you will even be able to 'recall' commands.
-### TO DO: Change to tabs instead of gifs?
 ![Reviving container getting-started.](../fig/docker-desktop/31-32.gif)
 
 ## Cleaning up
 The `hello-world` image was nice and useful to test docker was working, but it is now rather useless.
 If I want to delete it, the 'Images' tab on the left has a convenient bin icon to do so.
 Clicking on it will prompt you for confirmation, but it will fail.
-### TO DO: Change to tabs instead of gifs?
 ![Failing to delete image.](../fig/docker-desktop/33-35.gif)
 
 
 You'll probably notice that the status of the image is 'In use'.
-That seems trange though, given that all the containers from that image excited immediately.
+That seems strange though, given that all the containers from that image excited immediately.
 
 Lets have a look at the 'Containers' tab. It shows a list of 5 containers now.
 Three of them came from the `hello-world` image, and are stopped.
@@ -292,7 +290,6 @@ Particularly so because we were a bit sloppy and did not name the containers.
 Let's try and get rid of the containers then.
 We can conveniently select them all with the tickbox at the top, and an option to 'Delete' shows up.
 Clicking on it will prompt for confirmation, and we can go ahead and accept.
-### TO DO: Change to tabs instead of gifs?
 ![Deleting containers.](../fig/docker-desktop/36-38.gif)
 All our containers are now gone. Forever.
 
@@ -303,7 +300,6 @@ On the up-side, the 'Images' tab shows both the `hello-world` and the `getting-s
 For docker, an image is 'In use' as long as at least one container has been created from it.
 We have just deleted all the containers created from either of these images.
 This tells Docker that they are no longer being used, and can therefore be safely deleted.
-### TO DO: Change to tabs instead of gifs?
 ![Successfully deleting images.](../fig/docker-desktop/39-42.gif)
 
 ## Limitations - Why not Docker Desktop?
