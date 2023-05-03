@@ -108,8 +108,7 @@ remote_theme: carpentries/carpentries-theme@main
 episode_order:
     - introduction
     - meet-docker
-    - running-containers
-    - managing-containers
+    - docker-cli
     - docker-hub
     - creating-container-images
     - advanced-containers
