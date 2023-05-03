@@ -107,6 +107,7 @@ remote_theme: carpentries/carpentries-theme@main
 # episode order
 episode_order:
     - introduction
+    - docker-desktop
     - meet-docker
     - running-containers
     - managing-containers
