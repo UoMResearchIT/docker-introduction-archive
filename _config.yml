@@ -114,5 +114,3 @@ episode_order:
     - docker-hub
     - creating-container-images
     - advanced-containers
-    - docker-image-examples
-    - reproduciblity
