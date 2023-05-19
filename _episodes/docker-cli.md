@@ -446,8 +446,17 @@ Can you spot the difference?
 ~~~
 $ docker run -v data.txt:/data.txt ghcr.io/uomresearchit/datamash data.txt
 ~~~
+~~~
+Traceback (most recent call last):
+  File "//mean.py", line 7, in <module>
+    with open(args.filename) as f:
+IsADirectoryError: [Errno 21] Is a directory: 'data.txt'
+~~~
+{: .output}
 
+Why has this not worked? The answer is that Docker has created a volume! Not mounted our file! This is because the Docker command requires absolute paths, if a path doesn't evaluate correclty then it assumes you are naming a new volume.
 
+See this bit of the Docker man page:
 
 ~~~
 -v|--volume[=[[HOST-DIR:]CONTAINER-DIR[:OPTIONS]]]
@@ -457,8 +466,7 @@ container. If 'HOST-DIR' is omitted,  Docker automatically creates the new
 volume on the host.
 ~~~
 
-
-
+For this reason, we would recommend using the full (clunky) syntax of the mount command.
 
 ## Running services in Docker ## 
 
