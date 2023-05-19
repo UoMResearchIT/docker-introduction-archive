@@ -23,6 +23,8 @@ There are lots of reasons why you might want to create your **own** Docker conta
 - You want to have a container image to "archive" all the specific software versions you ran for a project.
 - You want to share your workflow with someone else.
 
+## ENV and ARG ##
+
 ## Interactive installation
 
 Before creating a reproducible installation, let's experiment with installing
