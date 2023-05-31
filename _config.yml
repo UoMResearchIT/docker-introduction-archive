@@ -114,5 +114,3 @@ episode_order:
     - managing-containers
     - creating-container-images
     - advanced-containers
-    - docker-image-examples
-    - reproduciblity
