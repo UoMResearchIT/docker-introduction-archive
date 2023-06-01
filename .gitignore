@@ -1,14 +1,4 @@
-*.pyc
-*~
-.DS_Store
-.ipynb_checkpoints
-.sass-cache
-__pycache__
-_site/*
-!_site/.gitkeep
-.Rproj.user
-.Rhistory
-.RData
-
-vendor
-.bundle
+# sandpaper files
+episodes/*html
+site/*
+!site/README.md
