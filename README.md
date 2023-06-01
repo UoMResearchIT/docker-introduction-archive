@@ -1,8 +1,6 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/carpentries-incubator/docker-introduction)
+[![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 
 # Reproducible computational environments using containers: Introduction to Docker
-
-[![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 
 This repository generates the corresponding lesson website from [The Carpentries](https://carpentries.org/) repertoire of lessons. 
 
@@ -22,26 +20,20 @@ Please see the current list of [issues](https://github.com/carpentries-incubator
 repository. For making your contribution, we use the GitHub flow, which is
 nicely explained in the chapter [Contributing to a Project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro Git
 by Scott Chacon.
-Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg). This indicates that the mantainers will welcome a pull request fixing this issue.  
-
+Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg). This indicates that the mantainers will welcome a pull request fixing this issue.
 
 ## Maintainer(s)
+Current Maintainers:
 
-Current maintainers of this lesson are 
+- [Oliver Woolland]()
+- [Francisco Herrerías-Azcué]()
+- [Nigel Green]()
+- [Douglas Lowe]()
 
-* [Jeremy Cohen](https://github.com/jcohen02)
-* [David Eyers](https://github.com/dme26/)
-* [Christina Koch](https://github.com/ChristinaLK)
-* [Andy Turner](https://github.com/aturner-epcc)
-* [Sarah Stevens](https://github.com/sstevens2/) - Send emails with questions here
+Previous Maintainers:
 
-
-## Authors
-
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
-
-## Citation
-
-To cite this lesson, please consult with [CITATION](CITATION)
-
-[lesson-example]: https://carpentries.github.io/lesson-example
+- [Jeremy Cohen](https://github.com/jcohen02)
+- [David Eyers](https://github.com/dme26/)
+- [Christina Koch](https://github.com/ChristinaLK)
+- [Andy Turner](https://github.com/aturner-epcc)
+- [Sarah Stevens](https://github.com/sstevens2/)
