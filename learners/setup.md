@@ -25,13 +25,6 @@ Please seek help at the start of the lesson if you have not been able to establi
 
 - The [Docker Hub](https://hub.docker.com). We will use the Docker Hub to download pre-built container images, and for you to upload and download container images that you create, as explained in the relevant lesson episodes.
 
-### Files to download
-
-Download the [[docker-intro.zip](files/docker-intro.zip) file. *This file can alternatively be downloaded from the `files` directory in the [docker-introduction GitHub repository][docker-introduction repository]*.
-
-Move the downloaded file to your Desktop and unzip it. It should unzip to a folder called `docker-intro`.
-
-
 ### Software to install
 
 Installing Docker on different platforms requires different procedures and generally requires root / administrator access for a successful installation. Please follow the pointers below for assistance in finding the correct installation procedures.
