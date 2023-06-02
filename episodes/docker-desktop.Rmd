@@ -94,6 +94,10 @@ The optional settings allow you to modify the container's name, so that you can 
 Lets add an appropriate name and confirm with the 'Run' button.
 ![](fig/docker-desktop/10_optional_settings.png){alt='Run optional settings.'}
 
+
+::::::::::::::::::: discussion
+#
+
 You will likely be taken to a 'Logs' tab inside the container that you just ran.
 The logs show the output of this particular image, 'Hello from Docker!' among other things.
 
@@ -102,72 +106,24 @@ We are looking at a container now, not an image, and so we were re-located.
 
 Exploring the 'Inspect' tab will show us some information, but for now we are more interested in what the 'Terminal' and 'Stats' tabs have to say.
 They both seem to indicate that we need to *run* or *start* the container.
+::::::::::::::::::::::::::::::
 
-{::options parse\_block\_html="true" /}
-
-<div>
-
-<ul class="nav nav-tabs nav-justified" role="tablist">
-
-  <li role="presentation" class="active">
-
-```
-<a href="#hw_Logs" aria-controls="hw_Logs" role="tab" data-toggle="tab">Logs</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#hw_Inspect" aria-controls="hw_Inspect" role="tab" data-toggle="tab">Inspect</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#hw_Terminal" aria-controls="hw_Terminal" role="tab" data-toggle="tab">Terminal</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#hw_Stats" aria-controls="hw_Stats" role="tab" data-toggle="tab">Stats</a>  </li>
-```
-
-</ul>
-
-<div class="tab-content">
-
-  <article role="tabpanel" class="tab-pane active" id="hw_Logs">
-
+:::::::::::::::: solution
+### Logs tab
 ![](fig/docker-desktop/11_hello_log.png){alt='Logs tab in container from hello-world image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="hw_Inspect">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Inspect tab
 ![](fig/docker-desktop/12_hello_inspect.png){alt='Inspect tab in container from hello-world image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="hw_Terminal">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Terminal tab
 ![](fig/docker-desktop/14_hello_terminal.png){alt='Terminal tab in container from hello-world image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="hw_Stats">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Stats tab
 ![](fig/docker-desktop/13_hello_stats.png){alt='Stats tab in container from hello-world image.'}
-
-  </article>
-
-</div>
-
-</div>
-
-<br/>
-
-{::options parse\_block\_html="false" /}
+:::::::::::::::::::::::::
 
 Indeed, if we look carefully, we will find an 'Exited (0)' status under the container name, and a 'Start' button near the top-right corner.
 However, if we click on that button we will see the output duplicated in the logs, and the 'Exited (0)' status again.
@@ -194,76 +150,33 @@ If we go back to the 'Images' tab and run `hello world` again, we'll see a new c
 Not all containers are as short lived as the one we've been using.
 If we run the `docker/getting-started` image that we had pulled earlier, we will see something different happen.
 You can immediately notice the status under the container name is 'RUNNING' now.
+nal *inside* the container.
+
+::::::::::::::::::: discussion
+#
 The 'Logs' tab is not too informative, but the 'Inspect' tab already shows more information.
 A process called 'nginx' is running.
 The 'Terminal' and 'Stats' tabs changed the most.
-Since the container is still running, the stats get shown, and we are able to launch a terminal *inside* the container.
+Since the container is still running, the stats get shown, and we are able to launch a termi
 
-{::options parse\_block\_html="true" /}
+::::::::::::::::::::::::::::::
 
-<div>
-
-<ul class="nav nav-tabs nav-justified" role="tablist">
-
-  <li role="presentation" class="active">
-
-```
-<a href="#gs_Logs" aria-controls="gs_Logs" role="tab" data-toggle="tab">Logs</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#gs_Inspect" aria-controls="gs_Inspect" role="tab" data-toggle="tab">Inspect</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#gs_Terminal" aria-controls="gs_Terminal" role="tab" data-toggle="tab">Terminal</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#gs_Stats" aria-controls="gs_Stats" role="tab" data-toggle="tab">Stats</a>  </li>
-```
-
-</ul>
-
-<div class="tab-content">
-
-  <article role="tabpanel" class="tab-pane active" id="gs_Logs">
-
+:::::::::::::::: solution
+### Logs tab
 ![](fig/docker-desktop/18_gettingstarted_log.png){alt='Logs tab in container from getting-started image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="gs_Inspect">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Inspect tab
 ![](fig/docker-desktop/19_gettingstarted_inspect.png){alt='Inspect tab in container from getting-started image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="gs_Terminal">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Terminal tab
 ![](fig/docker-desktop/20_gettingstarted_terminal.png){alt='Terminal tab in container from getting-started image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="gs_Stats">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Stats tab
 ![](fig/docker-desktop/21_gettingstarted_stats.png){alt='Stats tab in container from getting-started image.'}
-
-  </article>
-
-</div>
-
-</div>
-
-<br/>
-
-{::options parse\_block\_html="false" /}
+:::::::::::::::::::::::::
 
 Before trying to do anything in the terminal, let's look at the container list by clicking on the 'Containers' tab on the left.
 You'll see the green icon of the container indicating that it is still live, and indication of how long it's been running for.
@@ -277,108 +190,43 @@ At this point this container is very much like a VM.
 We can modify things, like for example making a directory with `mkdir`, and see it has been created with `ls` again.
 ![](fig/docker-desktop/23_gettingstarted_mkdir.png){alt='Terminal, mkdir and ls inside getting-started container.'}
 
+::::::::::::::::::: discussion
+#
 But we can do more than that, we can install things. For example, you'll notice that `htop` is not installed.
 Since the `getting-started` image is based on Alpine, we can install it using `apk add htop`, and we can now use it.
 
-{::options parse\_block\_html="true" /}
+::::::::::::::::::::::::::::::
 
-<div>
-
-<ul class="nav nav-tabs nav-justified" role="tablist">
-
-  <li role="presentation" class="active">
-
-```
-<a href="#install_htop" aria-controls="install_htop" role="tab" data-toggle="tab">Installing htop</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#htop_running" aria-controls="htop_running" role="tab" data-toggle="tab">Running htop</a>  </li>
-```
-
-</ul>
-
-<div class="tab-content">
-
-  <article role="tabpanel" class="tab-pane active" id="install_htop">
-
+:::::::::::::::: solution
+### Installing htop 1
 ![](fig/docker-desktop/24_gettingstarted_htop.png){alt='Terminal, installing htop inside getting-started container.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="htop_running">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Installing htop 2
 ![](fig/docker-desktop/25_gettingstarted_htop2.png){alt='Terminal, running htop inside getting-started container.'}
+:::::::::::::::::::::::::
 
-  </article>
 
-</div>
-
-</div>
-
-<br/>
-
-{::options parse\_block\_html="false" /}
-
+::::::::::::::::::: discussion
+#
 The container does not need to stay alive forever, and you can see that there is a 'stop' icon on the top right.
 If we stop the container, we get a familiar empty tab in 'Terminal' and 'Stats'.
 The 'Containers' tab on the left will also show the container status as 'Exited'
 
-{::options parse\_block\_html="true" /}
+::::::::::::::::::::::::::::::
 
-<div>
-
-<ul class="nav nav-tabs nav-justified" role="tablist">
-
-  <li role="presentation" class="active">
-
-```
-<a href="#gs_stopped_Terminal" aria-controls="gs_stopped_Terminal" role="tab" data-toggle="tab">Terminal</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#gs_stopped_Stats" aria-controls="gs_stopped_Stats" role="tab" data-toggle="tab">Stats</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#gs_stopped_Containers" aria-controls="gs_stopped_Containers" role="tab" data-toggle="tab">Containers</a>  </li>
-```
-
-</ul>
-
-<div class="tab-content">
-
-  <article role="tabpanel" class="tab-pane active" id="gs_stopped_Terminal">
-
+:::::::::::::::: solution
+### Terminal tab
 ![](fig/docker-desktop/26_gettingstarted_exited_t.png){alt='Terminal tab in container from stopped getting-started image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="gs_stopped_Stats">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Stats tab
 ![](fig/docker-desktop/27_gettingstarted_exited_s.png){alt='Stats tab in container from stopped getting-started image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="gs_stopped_Containers">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Container list
 ![](fig/docker-desktop/28_gettingstarted_exited_c.png){alt='Container list after stopping getting-started image.'}
-
-  </article>
-
-</div>
-
-</div>
-
-<br/>
-
-{::options parse\_block\_html="false" /}
+:::::::::::::::::::::::::
 
 Now lets say I want to run the `getting-started` image again. So I go to the 'Images' tab, and click run.
 Now lets go to the 'Terminal' tab, and try and find our directory with `ls`. The directory is not there.
@@ -444,71 +292,29 @@ That was fast, and uneventful.
 Not even a single output to the 'Logs'.
 No way to open a terminal inside Alpine.
 
-{::options parse\_block\_html="true" /}
 
-<div>
+::::::::::::::::::: discussion
+#
 
-<ul class="nav nav-tabs nav-justified" role="tablist">
 
-  <li role="presentation" class="active">
+::::::::::::::::::::::::::::::
 
-```
-<a href="#a_Logs" aria-controls="a_Logs" role="tab" data-toggle="tab">Logs</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#a_Inspect" aria-controls="a_Inspect" role="tab" data-toggle="tab">Inspect</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#a_Terminal" aria-controls="a_Terminal" role="tab" data-toggle="tab">Terminal</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#a_Stats" aria-controls="a_Stats" role="tab" data-toggle="tab">Stats</a>  </li>
-```
-
-</ul>
-
-<div class="tab-content">
-
-  <article role="tabpanel" class="tab-pane active" id="a_Logs">
-
+:::::::::::::::: solution
+### Logs tab
 ![](fig/docker-desktop/44_alpine_logs.png){alt='Logs tab in container from alpine image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="a_Inspect">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Inspect tab
 ![](fig/docker-desktop/45_alpine_i.png){alt='Inspect tab in container from alpine image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="a_Terminal">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Terminal tab
 ![](fig/docker-desktop/46_alpine_t.png){alt='Terminal tab in container from alpine image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="a_Stats">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Stats tab
 ![](fig/docker-desktop/47_alpine_s.png){alt='Stats tab in container from alpine image.'}
-
-  </article>
-
-</div>
-
-</div>
-
-<br/>
-
-{::options parse\_block\_html="false" /}
+:::::::::::::::::::::::::
 
 Just to be clear though, this Docker image does contain the whole Alpine OS.
 In Docker Desktop, however, there is no way to interact with it.
@@ -519,71 +325,27 @@ Searching for that image shows that there is one by `beatrixxx32` with a reasona
 ![](fig/docker-desktop/48_cowsay.png){alt='Search of cowsay image.'}
 So lets pull that image and run it.
 
-{::options parse\_block\_html="true" /}
+::::::::::::::::::: discussion
+#
 
-<div>
+::::::::::::::::::::::::::::::
 
-<ul class="nav nav-tabs nav-justified" role="tablist">
-
-  <li role="presentation" class="active">
-
-```
-<a href="#c_Logs" aria-controls="c_Logs" role="tab" data-toggle="tab">Logs</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#c_Inspect" aria-controls="c_Inspect" role="tab" data-toggle="tab">Inspect</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#c_Terminal" aria-controls="c_Terminal" role="tab" data-toggle="tab">Terminal</a>  </li>
-```
-
-  <li role="presentation">
-
-```
-<a href="#c_Stats" aria-controls="c_Stats" role="tab" data-toggle="tab">Stats</a>  </li>
-```
-
-</ul>
-
-<div class="tab-content">
-
-  <article role="tabpanel" class="tab-pane active" id="c_Logs">
-
+:::::::::::::::: solution
+### Logs tab
 ![](fig/docker-desktop/50_cowsay_logs.png){alt='Logs tab in container from cowsay image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="c_Inspect">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Inspect tab
 ![](fig/docker-desktop/51_cowsay_inspect.png){alt='Inspect tab in container from cowsay image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="c_Terminal">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Terminal tab
 ![](fig/docker-desktop/52_cowsay_term.png){alt='Terminal tab in container from cowsay image.'}
-
-  </article>
-
-  <article role="tabpanel" class="tab-pane" id="c_Stats">
-
+:::::::::::::::::::::::::
+:::::::::::::::: solution
+### Stats tab
 ![](fig/docker-desktop/53_cowsay_stats.png){alt='Stats tab in container from cowsay image.'}
-
-  </article>
-
-</div>
-
-</div>
-
-<br/>
-
-{::options parse\_block\_html="false" /}
+:::::::::::::::::::::::::
 
 We do get a cow this time, but it is not saying anything.
 But it does not know *what* to say.
@@ -614,5 +376,3 @@ In the next episode, we will use docker from the command line, and all of the ad
 - However, it is very limited in most cases (even for *consumers*), and rarely allows the user to configure and interact with the containers adequately.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
