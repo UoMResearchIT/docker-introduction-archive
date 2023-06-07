@@ -62,9 +62,7 @@ episodes:
 - introduction.Rmd
 - docker-hub.Rmd
 - docker-desktop.Rmd
-- meet-docker.Rmd
-- running-containers.Rmd
-- managing-containers.Rmd
+- docker-cli.Rmd
 - creating-container-images.Rmd
 - advanced-containers.Rmd
 
