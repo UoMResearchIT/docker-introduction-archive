@@ -27,7 +27,7 @@ life_cycle: 'beta'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/UoMResearchIT/docker-introduction-R'
+source: 'https://github.com/UoMResearchIT/docker-introduction'
 
 # Default branch of your lesson
 branch: 'main'
@@ -83,6 +83,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: 'https://uomresearchit.github.io/docker-introduction-R/'
+url: 'https://uomresearchit.github.io/docker-introduction/'
 analytics: carpentries
 lang: en
