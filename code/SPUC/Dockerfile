@@ -9,3 +9,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./*.py /code/
 
 ENTRYPOINT ["python", "/code/spuc.py"]
+CMD ["--units", "iuhc"]
