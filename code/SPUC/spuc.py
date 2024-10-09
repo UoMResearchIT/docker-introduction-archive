@@ -21,6 +21,9 @@ Welcome to the Space Purple Unicorn Counter!
 ::::: Or 'curl localhost:8321/export/' to download the unicorn sightings file!
 """
 
+# ------------------------------------------------------------------------------
+# Endpoint for exporting the unicorn sightings if the EXPORT environment variable is set to True
+
 if os.environ.get('EXPORT') == 'True':
     @app.route("/export/", methods=["GET"])
     def chart():
@@ -29,15 +32,21 @@ if os.environ.get('EXPORT') == 'True':
             
         return send_file(file_path, as_attachment=True)
 
+# ------------------------------------------------------------------------------
+# Endpoint for recording unicorn sightings
+
 @app.route("/unicorn_spotted/", methods=["PUT"])
 def unicorn_sighting() -> dict:
-    #e.g. curl localhost:8321/unicorn_spotted/?location=moon&brightness=10
+
+    # --------------------------------------------------------------------------
+    # Get the location and brightness from the request
 
     location = request.args.get("location")
     brightness = request.args.get("brightness")
 
     # --------------------------------------------------------------------------
     # Write the sighting to a file and print to the console
+
     with open(file_path, "a") as unicorn_file:
         # Append the location to the file
         line = pf.get_str(location, brightness, units)
@@ -52,8 +61,10 @@ def unicorn_sighting() -> dict:
 
 
 if __name__ == "__main__":
+
     # --------------------------------------------------------------------------
     # Parse the command line arguments
+
     parser = argparse.ArgumentParser(description="Run the unicorn sighting API")
     parser.add_argument(
         "--units",
@@ -66,6 +77,7 @@ if __name__ == "__main__":
 
     # --------------------------------------------------------------------------
     # Set the units
+
     units = args.units
     if units == "iuhc":
         unit_long_name = "Imperial Unicorn Hoove Candles"
@@ -74,6 +86,7 @@ if __name__ == "__main__":
 
     # --------------------------------------------------------------------------
     # Print the initialization message
+
     logo = r"""
             \\
              \\
