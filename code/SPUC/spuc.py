@@ -6,26 +6,35 @@ from datetime import datetime
 import argparse
 import print_format as pf
 
-import uvicorn
-from fastapi import FastAPI
-from starlette.responses import FileResponse
+from flask import Flask, send_file, request
+from waitress import serve
 
 units = None
-app = FastAPI()
+app = Flask(__name__)
 
 file_name = "unicorn_sightings.txt"
 file_path = f"output/{file_name}"
 
+help_string = """
+Welcome to the Space Purple Unicorn Counter!
+::::: Try 'curl -X PUT localhost:8321/unicorn_spotted/?location=moon&brightness=100' to record a unicorn sighting!
+::::: Or 'curl localhost:8321/export/' to download the unicorn sightings file!
+"""
+
 if os.environ.get('EXPORT') == 'True':
-    @app.get("/sightings/")
+    @app.route("/export/", methods=["GET"])
     def chart():
         if not os.path.exists(file_path):
             return {"message": "No unicorn sightings yet!"}
             
-        return FileResponse(file_path)
+        return send_file(file_path, as_attachment=True)
 
-@app.put("/unicorn_spotted/")
-def unicorn_sighting(location: str, brightness: float):
+@app.route("/unicorn_spotted/", methods=["PUT"])
+def unicorn_sighting() -> dict:
+    #e.g. curl localhost:8321/unicorn_spotted/?location=moon&brightness=10
+
+    location = request.args.get("location")
+    brightness = request.args.get("brightness")
 
     # --------------------------------------------------------------------------
     # Write the sighting to a file and print to the console
@@ -35,7 +44,7 @@ def unicorn_sighting(location: str, brightness: float):
         unicorn_file.write(line)
 
         # Print the line to the console
-        console_line = f":::: ({datetime.now()}) Unicorn spotted at {location}!! Brightness: {brightness} {units} ::::"
+        console_line = f"::::: ({datetime.now()}) Unicorn spotted at {location}!! Brightness: {brightness} {units}"
         print(console_line)
         sys.stdout.flush()
 
@@ -91,10 +100,12 @@ if __name__ == "__main__":
                      <'
     """
     print(logo)
-    print(f"Initializing SPUC...")
-    print(f"Units set to {unit_long_name} [{units}].")
+    print(f"::::: Initializing SPUC...")
+    print(f"::::: Units set to {unit_long_name} [{units}].")
+    print(f"{help_string}")
     sys.stdout.flush()
 
     # --------------------------------------------------------------------------
     # Run the API
-    uvicorn.run(app, host="0.0.0.0", port=80, log_level="warning")
+
+    serve(app, host="0.0.0.0", port=8321)
