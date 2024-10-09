@@ -6,6 +6,6 @@ COPY ./requirements.txt /code/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-COPY ./spuc.py /code/spuc.py
+COPY ./*.py /code/
 
 ENTRYPOINT ["python", "/code/spuc.py"]

@@ -1,7 +1,9 @@
 import sys
 from typing import Union
 from datetime import datetime
+
 import argparse
+import print_format as pf
 
 import uvicorn
 from fastapi import FastAPI
@@ -17,7 +19,7 @@ def unicorn_sighting(location: str, brightness: float):
     # Write the sighting to a file and print to the console
     with open("unicorn_sightings.txt", "a") as unicorn_file:
         # Append the location to the file
-        line = f"{datetime.now()}, {location}, {brightness} {units}\n"
+        line = pf.get_str(location, brightness, units)
         unicorn_file.write(line)
 
         # Print the line to the console
