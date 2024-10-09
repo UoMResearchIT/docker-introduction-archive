@@ -1,0 +1,10 @@
+services:
+  spuc:
+    build:
+      context: SPUC
+      dockerfile: Dockerfile
+    image: ghcr.io/uomresearchit/spuc:latest
+    container_name: spuc
+    ports:
+      - "8080:80"
+      
