@@ -9,4 +9,6 @@ services:
       - "8321:80"
     volumes:
       - ${PWD}/SPUC/spuc.py /code/spuc.py
+    environment:
+      - EXPORT=True
       

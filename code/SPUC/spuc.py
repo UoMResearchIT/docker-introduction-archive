@@ -1,3 +1,4 @@
+import os
 import sys
 from typing import Union
 from datetime import datetime
@@ -7,10 +8,15 @@ import print_format as pf
 
 import uvicorn
 from fastapi import FastAPI
+from starlette.responses import FileResponse
 
 units = None
 app = FastAPI()
 
+if os.environ.get('EXPORT') == 'True':
+    @app.get("/sightings/")
+    def chart():
+        return FileResponse("unicorn_sightings.txt")
 
 @app.put("/unicorn_spotted/")
 def unicorn_sighting(location: str, brightness: float):
