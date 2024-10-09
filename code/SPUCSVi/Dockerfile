@@ -10,4 +10,4 @@ COPY ./*.py /spucsvi/
 COPY ./templates /spucsvi/templates
 
 # CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000","--reload"]
-CMD ["flask", "--app", "spucsvi", "run", "--debug", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["flask", "--app", "spucsvi", "run", "--debug", "--host", "0.0.0.0", "--port", "8322"]
