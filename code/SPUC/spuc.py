@@ -1,3 +1,4 @@
+import sys
 from typing import Union
 from datetime import datetime
 import argparse
@@ -22,6 +23,7 @@ def unicorn_sighting(location: str, brightness: float):
         # Print the line to the console
         console_line = f":::: ({datetime.now()}) Unicorn spotted at {location}!! Brightness: {brightness} {units} ::::"
         print(console_line)
+        sys.stdout.flush()
 
     return {"message": "Unicorn sighting recorded!"}
 
@@ -77,6 +79,7 @@ if __name__ == "__main__":
     print(logo)
     print(f"Initializing SPUC...")
     print(f"Units set to {unit_long_name} [{units}].")
+    sys.stdout.flush()
 
     # --------------------------------------------------------------------------
     # Run the API
