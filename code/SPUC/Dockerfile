@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./spuc.py /code/spuc.py
 
-CMD ["fastapi", "run", "spuc.py", "--port", "80"]
+ENTRYPOINT ["python", "/code/spuc.py"]

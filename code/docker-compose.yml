@@ -6,5 +6,7 @@ services:
     image: ghcr.io/uomresearchit/spuc:latest
     container_name: spuc
     ports:
-      - "8080:80"
+      - "8321:80"
+    volumes:
+      - ${PWD}/SPUC/spuc.py /code/spuc.py
       
