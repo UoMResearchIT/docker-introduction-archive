@@ -13,17 +13,23 @@ from starlette.responses import FileResponse
 units = None
 app = FastAPI()
 
+file_name = "unicorn_sightings.txt"
+file_path = f"output/{file_name}"
+
 if os.environ.get('EXPORT') == 'True':
     @app.get("/sightings/")
     def chart():
-        return FileResponse("unicorn_sightings.txt")
+        if not os.path.exists(file_path):
+            return {"message": "No unicorn sightings yet!"}
+            
+        return FileResponse(file_path)
 
 @app.put("/unicorn_spotted/")
 def unicorn_sighting(location: str, brightness: float):
 
     # --------------------------------------------------------------------------
     # Write the sighting to a file and print to the console
-    with open("unicorn_sightings.txt", "a") as unicorn_file:
+    with open(file_path, "a") as unicorn_file:
         # Append the location to the file
         line = pf.get_str(location, brightness, units)
         unicorn_file.write(line)
