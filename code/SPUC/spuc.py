@@ -17,8 +17,8 @@ file_path = f"output/{file_name}"
 
 help_string = """
 Welcome to the Space Purple Unicorn Counter!
-::::: Try 'curl -X PUT localhost:8321/unicorn_spotted/?location=moon&brightness=100' to record a unicorn sighting!
-::::: Or 'curl localhost:8321/export/' to download the unicorn sightings file!
+::::: Try 'curl -X PUT localhost:8321/unicorn_spotted?location=moon\&brightness=100' to record a unicorn sighting!
+::::: Or 'curl localhost:8321/export' to download the unicorn sightings file!
 """
 
 # ------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ if os.environ.get('EXPORT') == 'True':
 # ------------------------------------------------------------------------------
 # Endpoint for recording unicorn sightings
 
-@app.route("/unicorn_spotted/", methods=["PUT"])
+@app.route("/unicorn_spotted", methods=["PUT"])
 def unicorn_sighting() -> dict:
 
     # --------------------------------------------------------------------------
